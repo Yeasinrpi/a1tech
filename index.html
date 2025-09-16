@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FTP Server Checker</title>
+</head>
+<body>
+  <h2>Check FTP Server Connectivity</h2>
+  <form id="ftpForm">
+    <input type="text" id="ftpServer" placeholder="Enter FTP Server IP" required>
+    <button type="submit">Check</button>
+  </form>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById('ftpForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const server = document.getElementById('ftpServer').value;
+      const res = await fetch(`https://your-backend-url/check?server=${server}`);
+      const data = await res.text();
+      document.getElementById('result').innerText = data;
+    });
+  </script>
+</body>
+</html>
 
