@@ -15,7 +15,7 @@
     document.getElementById('ftpForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const server = document.getElementById('ftpServer').value;
-      const res = await fetch(`https://your-backend-url/check?server=${server}`);
+      const res = await fetch(`https://a-1-tech-backend-wamailus.replit.app/?server=${server}`);
       const data = await res.text();
       document.getElementById('result').innerText = data;
     });
